@@ -310,7 +310,7 @@ function addFlashcards() {
 	]).then(function(userResponse) {
 		// If user wants to add a basic flashcard
 		if (userResponse.cardType === "Basic") {
-			var newBasic = new BasicCard(userResponse.front, userResponse.back);
+			var newBasic = BasicCard(userResponse.front, userResponse.back);
 			// Add the basic flashcard to the 'basic deck' and 'back deck questions' array
 			basicDeck.push(newBasic);
 			basicDeckQuestions.push(newBasic.front);
@@ -321,7 +321,7 @@ function addFlashcards() {
 			// console.log("-------------------------------------");
 		// If user wants to add a cloze flashcard
 		} else {
-			var newCloze = new ClozeCard(userResponse.front, userResponse.back);
+			var newCloze = ClozeCard(userResponse.front, userResponse.back);
 			// If the new cloze flashcard is valid
 			if (Object.keys(newCloze).length !== 0) {
 				// Add the basic flashcard to the 'cloze deck' and 'cloze deck full text' array
@@ -423,7 +423,7 @@ function removeBasicFlashcards() {
 		console.log("Flashcard(s) removed from basic deck.");
 		// console.log("Updated Combined Deck: ", combinedDeck);
 		// console.log("-------------------------------------");
-		console.log("Returning to main menu...");
+		// console.log("Returning to main menu...");
 		initial();
 	});
 };
@@ -468,7 +468,7 @@ function removeClozeFlashcards() {
 		console.log("Flashcard(s) removed from cloze deck.");
 		// console.log("Updated Combined Deck: ", combinedDeck);
 		// console.log("-------------------------------------");
-		console.log("Returning to main menu...");
+		// console.log("Returning to main menu...");
 		initial();
 	});
 };
